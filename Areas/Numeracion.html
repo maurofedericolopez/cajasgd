@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>cajapoliciatdf.gob.ar</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?h=02eb0cece864e72d9429e1a0c7dee25a">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css?h=8c682125c99049ce84823e0f88ec6192">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm" style="background-color: #3a80b9;">
+        <div class="container-fluid"><a class="navbar-brand" href="#"><img src="http://cajapoliciatdf.gob.ar/admin/Uploads/Layout/logo.png" width="40px"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse justify-content-end" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#"><i class="fa fa-book"></i>&nbsp; Expedientes</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#"><i class="fa fa-file-text-o"></i>&nbsp; Documentos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#"><i class="fa fa-hashtag"></i>&nbsp; Numeraciones</a></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><i class="fa fa-lock"></i>&nbsp; Seguridad</a>
+                        <div class="dropdown-menu dropdown-menu-right text-left" role="menu"><a class="dropdown-item" role="presentation" href="#">Clasificadores</a><a class="dropdown-item" role="presentation" href="#">Usuarios</a><a class="dropdown-item" role="presentation" href="#">Roles</a><a class="dropdown-item" role="presentation"
+                                href="#">Alertas</a></div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><i class="fa fa-user"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right text-left" role="menu"><a class="dropdown-item" role="presentation" href="#"><i class="fa fa-key"></i>&nbsp; Cambiar contraseña</a><a class="dropdown-item" role="presentation" href="#"><i class="fa fa-power-off"></i>&nbsp; Logout</a></div>
+                    </li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <section class="py-4">
+        <div class="container">
+            <div><a class="btn btn-primary align-self-end" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button" style="background-color: #3498db;"><i class="fa fa-plus"></i>&nbsp; Nueva numeración</a>
+                <div
+                    class="collapse my-4" id="collapse-1">
+                    <form method="post">
+                        <div class="container">
+                            <div class="form-row">
+                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                                    <div class="form-group"><label for="area">Area</label><select class="form-control" name="area"><option value="1" selected="">CAJA PREVISION POLICIAL</option><option value="2">ADMINISTRACION</option><option value="3">ASUNTOS JURIDICOS</option><option value="4">INVERSIONES</option></select></div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                                    <div class="form-group"><label for="tipo_de_documento">Tipo de documento</label><select class="form-control" name="tipo_de_documento"><option value="1">RESOLUCION</option><option value="2">DICTAMEN</option><option value="3" selected="">NOTA INTERNA</option><option value="4">INVERSIONES</option></select></div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">
+                                    <div class="form-group"><label for="inicial">Numeración inicial</label><input class="form-control" type="number" name="inicial" min="1" required="" value="156"></div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">
+                                    <div class="form-group"><label for="inicial">Anual</label><select class="form-control" name="area"><option value="1" selected="">SI</option><option value="0">NO</option></select></div>
+                                </div>
+                                <div class="col-12 text-right"><button class="btn btn-success text-left" type="submit"><i class="fa fa-check"></i>&nbsp; Guardar</button></div>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h4>Numeraciones</h4>
+            <form method="post">
+                <div class="form-group"><input class="form-control" type="text" name="search" placeholder="Buscar"></div>
+            </form>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="table-responsive table-bordered">
+                <table class="table table-striped table-bordered table-sm">
+                    <thead>
+                        <tr>
+                            <th>Area</th>
+                            <th>Tipo de documento</th>
+                            <th>Numeracion</th>
+                            <th class="text-center">Anual</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CAJA DE PREVISION POLICIAL<br></td>
+                            <td>NOTA INTERNA</td>
+                            <td>156</td>
+                            <td class="text-center">SI</td>
+                            <td class="text-center"><button class="btn btn-warning text-white" type="button"><i class="fa fa-pencil"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>ADMINISTRACION</td>
+                            <td>RESOLUCION</td>
+                            <td>12</td>
+                            <td class="text-center">NO</td>
+                            <td class="text-center"><button class="btn btn-warning text-white" type="button"><i class="fa fa-pencil"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col"><span>Mostrando registros del 1 al 10 de un total de 2 registros<br></span></div>
+                <div class="col d-flex justify-content-lg-end">
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.min.js?h=82d712d5e0811380f26d2753ca68c860"></script>
+</body>
+
+</html>
